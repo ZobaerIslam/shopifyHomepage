@@ -15,21 +15,67 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
+    <!-- GOOGLE SOURCE SANS PRO -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap" rel="stylesheet"> -->
+
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- custom js file link -->
+    <script src="js/script.js" defer></script>
 
     <title>Shopify</title>
 </head>
 
 <body>
+    <header class="header">
+        <nav class="nav__container">
+            <div class="nav__logo">
+                <a href="#" class="nav__logo__link">
+                    <img src="images/shopify-logo-1.png" alt="Shopify logo" class="shopify--logo">
+                </a>
+            </div>
+            <div class="navigation__bar">
+                <div class="menu__bar__head">
+                    <div class="menu__bar__head__wrapper">
+                        <img src="images/shopify-logo-2.png" alt="Shopify logo" class="menu__bar__head--image">
+                        <div id="menubar-btn"><span id="nav-icon2" class="menu__bar__head--icon icon-pause2"></span></div>
+                    </div>
+                </div>
+                <ul class="nav__items">
+                    <li class="nav__item"><a href="#" class="nav--link">Start <span class="dropdown--icon icon-chevron-down"></span></a></li>
+                    <li class="nav__item"><a href="#" class="nav--link">sell <span class="dropdown--icon icon-chevron-down"></span></a></li>
+                    <li class="nav__item"><a href="#" class="nav--link">market <span class="dropdown--icon icon-chevron-down"></span></a></li>
+                    <li class="nav__item"><a href="#" class="nav--link">Manage <span class="dropdown--icon icon-chevron-down"></span></a></li>
+                </ul>
+                <hr class="horizontal--line">
+                <ul class="nav__expended__items">
+                    <li class="nav__item"><a href="#" class="nav--link">pricing</a></li>
+                    <li class="nav__item"><a href="#" class="nav--link">learn <span class="dropdown--icon icon-chevron-down"></span> </a></li>
+                    <li class="nav__item"><a href="#" class="non--capital nav--link">Log in</a></li>
+                    <button class="btn">Start free trail</button>
+                </ul>
+            </div>
+            <div id="menu-btn">
+                <div class="login__item">
+                    <ul>
+                        <li><a href="#" class="login--link">Log in</a></li>
+                    </ul>
+                </div>
+                <span id="nav-icon" class="pause--icon icon-pause2"></span>
+            </div>
+        </nav>
+    </header>
     <main class="main">
         <!-- HEADING SECTION START -->
         <section class="container">
             <div class="container__wrapper">
                 <div class="heading__head">
                     <h1 class="heading__h1">The platform commerce is built on</h1>
-                    <p class="heading__sub">More than a million of the world's most successful brands trust Shopify to
-                        sell, ship and process payments anywhere.</p>
+                    <p class="heading__sub">Millions of the world's most successful brands trust Shopify to sell, 
+                        ship and process payments anywhere.</p>
                     <div class="form__group">
                         <form action="" class="form form__button__pair">
                             <input type="email" placeholder="Enter your email address" class="form__input" id="email">

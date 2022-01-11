@@ -26,17 +26,12 @@ html {
 body {
     font-size: 1.6rem;
     font-family: 'Poppins', sans-serif;
+    /* font-family: 'Source Sans Pro', sans-serif;; */
     line-height: 1.5;
     color: #6b7177;
     font-weight: 400;
 }
 
-.main {
-    max-width: 160rem;
-    margin: 0 auto;
-    background: var(--color-white);
-
-}
 
 /* FONTS ICON */
 @font-face {
@@ -65,7 +60,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  
+
   .icon-chevron-down:before {
     content: "\e900";
   }
@@ -107,7 +102,148 @@ body {
   }
 
 
+
+/* HEADER */
+.header {
+    max-width: 160rem;
+    margin: 0 auto;
+    /* background-color: var(--color-secondary); */
+    /* position: fixed; */
+}
+
+.nav__container {
+    min-height: 8rem;
+    width: 100%;
+    padding: 0 calc(5% + 18px);
+    background-color: var(--color-secondary);
+    /* background-color: white; */
+    box-shadow: 0 10px 10px -10px rgb(33 35 38 / 0%);
+    transition: all 300ms ease-in-out;
+    border-bottom: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav__logo {
+    margin-right: 2.5rem;
+}
+
+.nav__logo__link {
+    width: 12.1rem;
+    height: 3.5rem;
+    margin-top: -2px;
+    display: block;
+
+    text-decoration: none;
+    color: #008060;
+}
+
+.shopify--logo {
+    width: 100%;
+    height: auto;
+}
+
+.navigation__bar {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+}
+
+.nav__items {
+    display: flex;
+    list-style: none;
+    margin-right: auto;
+}
+
+.nav__item {
+    display: inline-block;
+    /* height: 8rem; */
+}
+
+.nav--link {
+    text-decoration: none;
+    font-size: 1.7rem;
+    color: #42474c;
+    padding: 2rem 0;
+    margin: 0 1.5rem;
+    text-transform: capitalize;
+    letter-spacing: 0.32px;
+}
+
+.dropdown--icon {
+    font-size: 1.5rem;
+    color: #828a91;
+}
+
+.nav--link:hover .dropdown--icon{
+    color: #212326;;
+}
+
+.nav__expended__items {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.non--capital {
+    text-transform: none;
+}
+
+.nav__expended__items .btn {
+    padding: 1.2rem 1.9rem;
+    margin-left: 1.5rem;
+    margin-top: .7rem;
+}
+
+/* MOBILE NAV */
+.menu__bar__head {
+    display: none;
+}
+
+/* MENU BUTTON */
+#menu-btn {
+    color: black;
+    cursor: pointer;
+    display: none;
+}
+
+.login__item {
+    display: inline-block;
+    margin-right: 3rem;
+}
+
+.login__item ul {
+    list-style: none;
+}
+
+.login__item ul li{
+    display: inline-block;
+}
+
+.login__item .login--link {
+    font-size: 1.7rem;
+    color: #42474c;
+    text-decoration: none;
+}
+
+.pause--icon {
+    font-size: 2.5rem;
+    display: inline-block;
+    position: relative;
+    left: 0px;
+    top: 4px;
+    cursor: pointer;
+}
+
 /*  HEADING LEFT SIDE */
+
+.main {
+    max-width: 160rem;
+    margin: 0 auto;
+    background: var(--color-white);
+}
+
 .container {
     width: 100%;
     padding: 9.6rem 0;
@@ -375,12 +511,13 @@ body {
 .strategy__item--h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--color-white);
 }
 
 .strategy__item--p {
     color: var(--color-white);
+    font-weight: 300;
 }
 
 /* PLANING */
@@ -1027,7 +1164,7 @@ body {
 /* 1200px */
 @media only screen and (max-width: 75em) {
     html {
-        /* font-size: 50%;  1rem = 8px */
+        /* font-size: 50%;  /*1rem = 8px */
         font-size: 56.25%;  /*1rem = 9px*/
     }
 
@@ -1039,6 +1176,132 @@ body {
 
 /* 1050px */
 @media only screen and (max-width: 65.625em) {
+    
+    #menu-btn {
+        display: block;
+    }
+
+    .nav__container {
+        justify-content: space-between;
+    }
+
+
+    /* MENU BAR  START*/
+    .navigation__bar{
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: var(--color-white);
+
+        display: block;
+        width: 36.2rem;
+        max-width: 100%;
+        min-height: 100%;
+        flex-direction: column;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        z-index: 999;
+        transition: all .4s;
+        /* display: none; */
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        /* clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%); */
+
+    }
+
+    .navigation__bar.active {
+        clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+    } 
+
+    .menu__bar__head {
+        padding: 1.6rem 0;
+        display: block;
+    }
+    
+    .menu__bar__head__wrapper {
+        height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.6rem 0;
+        border-bottom: 1px solid rgba(107, 113, 119, 0.3);
+    }
+
+    .menu__bar__head--image {
+        width: 11.1rem;
+        height: 3.2rem;
+        object-fit: cover;
+    }
+
+    .menu__bar__head--icon {
+        font-size: 3rem;
+    }
+
+    .navigation__bar > * {
+        padding: 0 3.2rem;
+        /* font-size: 1.8rem;
+        line-height: 1;
+        font-stretch: 100%; */
+        font-weight: 500;
+    }
+
+    .navigation__bar:last-child {
+        padding-bottom: 3.2rem;
+    }
+
+    .nav__items {
+        display: block;
+        padding-top: 1.6rem;
+        padding-bottom: 1.6rem;
+    }
+
+    .nav--link {
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
+        padding: 1.6rem 0;
+        color: rgb(33, 43, 54);
+    }
+
+    .horizontal--line {
+        color: rgba(107, 113, 119, 0.3);
+        height: 1px;
+        width: calc(100% - 6.4rem);
+        margin: 0 auto;
+    }
+
+    .nav__expended__items {
+        display: block;
+        flex-direction: column;
+        /* margin-top: 1.6rem; */
+        padding-top: 1.6rem;
+        padding-bottom: 1.6rem;
+    }
+
+    .nav__expended__items .nav--link{
+        padding: 1rem 0;
+    }
+
+    .nav__item {
+        display: block;
+    }
+
+    .dropdown--icon {
+        /* margin-left: auto; */
+        font-size: 1.8rem;
+    }
+
+    .nav__expended__items .btn {
+        margin: 3rem 0;
+        width: 100%;
+        font-size: 2rem;
+    }
+    
+    /* MENU BAR END */
+    
+
+
     .heading__h1 {
         font-size: 4.2rem;
     }
